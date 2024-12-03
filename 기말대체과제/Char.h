@@ -1,6 +1,4 @@
 #pragma once
-#ifndef GAME_H
-#define GAME_H
 
 // 캐릭터와 적의 크기 정의
 #define CHARACTER_WIDTH 11
@@ -23,4 +21,3 @@
 void draw_character();
 void draw_enemy();
 
-#endif // GAME_H
