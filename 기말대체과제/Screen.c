@@ -1,7 +1,26 @@
 #include <stdio.h>
+<<<<<<< HEAD
 #include "Screen.h"
 #include "menu.h" // 메뉴 관련 함수 포함
 #include "Char.c"
+=======
+#include <string.h>
+#include "Screen.h"
+
+// 메뉴 출력 함수
+void draw_menu(int selected_option) {
+    const char* option1 = (selected_option == 0) ? "▶싸운다" : "▷싸운다";
+    const char* option2 = (selected_option == 1) ? "▶도망친다" : "▷도망친다";
+
+    printf("===================================\n");
+    printf("||                                ||\n");
+    printf("||                                ||\n");
+    printf("||     %s           %s       ||\n", option1, option2);
+    printf("||                                ||\n");
+    printf("||                                ||\n");
+    printf("===================================\n");
+}
+>>>>>>> 50ae63ac8b81c03893b12e15a27d9eff5e6328f7
 
 // 캐릭터 출력 (위치 조정 포함)
 void draw_character_on_screen(const Character* character, int is_player, int offset_x) {
@@ -26,7 +45,10 @@ void draw_character_on_screen(const Character* character, int is_player, int off
 
     // 색상 초기화
     printf("\033[0m");
+<<<<<<< HEAD
 }
+=======
+>>>>>>> 50ae63ac8b81c03893b12e15a27d9eff5e6328f7
 
 // 전체 화면 출력
 void display_screen(const Character* player, const Character* enemy, int selected_menu_option) {
@@ -42,6 +64,10 @@ void display_screen(const Character* player, const Character* enemy, int selecte
     // 줄바꿈으로 캐릭터와 메뉴 구분
     printf("\n\n");
 
+<<<<<<< HEAD
     // 메뉴 출력 (menu.c의 draw_menu 함수 호출)
+=======
+    // 메뉴 출력
+>>>>>>> 50ae63ac8b81c03893b12e15a27d9eff5e6328f7
     draw_menu(selected_menu_option);
 }
