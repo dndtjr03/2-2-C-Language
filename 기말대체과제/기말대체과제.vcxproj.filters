@@ -27,10 +27,10 @@
     <ClCompile Include="Move.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Status.c">
+    <ClCompile Include="Char.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Char.c">
+    <ClCompile Include="menu.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,7 +38,7 @@
     <ClInclude Include="Char.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Status.h">
+    <ClInclude Include="menu.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Damage.h">

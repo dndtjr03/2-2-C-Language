@@ -131,16 +131,16 @@
     <ClCompile Include="Char.c" />
     <ClCompile Include="Damage.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="menu.c" />
     <ClCompile Include="Move.c" />
     <ClCompile Include="Screen.c" />
-    <ClCompile Include="Status.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Char.h" />
     <ClInclude Include="Damage.h" />
     <ClInclude Include="Move.h" />
     <ClInclude Include="Screen.h" />
-    <ClInclude Include="Status.h" />
+    <ClInclude Include="menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
