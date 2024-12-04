@@ -4,6 +4,7 @@
 #include "Char.h"
 #include "menu.h"
 #include "Screen.h"
+#include "Damage.h"
 
 void main()
 {
@@ -19,36 +20,41 @@ void main()
 
     // 게임 루프
     while (1) {
-        // 화면 출력
         display_screen(&player, &enemy, selected_menu_option);
 
-        // 키 입력 대기
-        while (!_kbhit()) {
-            // 비동기적으로 키 입력을 기다리면서 다른 작업 가능
+        if (kbhit()) {
+            char key = getch();
+            if (key == 0 || key == -32) {
+                key = getch();
+                if (key == 75) { // 왼쪽
+                    selected_menu_option = 0;
+                }
+                else if (key == 77) { // 오른쪽
+                    selected_menu_option = 1;
+                }
+            }
+            else if (key == '\r') { // Enter
+                if (selected_menu_option == 0) {
+                    printf("\n플레이어가 적을 공격합니다!\n");
+                    apply_damage(&enemy, 5); // 데미지 5 적용
+                }
+                else if (selected_menu_option == 1) {
+                    printf("\n무사히 도망쳤습니다!\n");
+                    break;
+                }
+            }
         }
 
-        // 키 입력 처리
-        char key = getch(); // 키보드 입력 읽기
-        if (key == 0 || key == -32) { // 방향키 입력 처리
-            key = getch();
-            if (key == 75) { // 왼쪽 방향키
-                selected_menu_option = 0; // 싸운다 선택
-            }
-            else if (key == 77) { // 오른쪽 방향키
-                selected_menu_option = 1; // 도망친다 선택
-            }
+        // 적 HP가 0이면 승리
+        if (enemy.hp <= 0) {
+            printf("\n적을 물리쳤습니다!\n");
+            break;
         }
-        else if (key == '\r') { // Enter 키 입력
-            if (selected_menu_option == 0) {
-                // "싸운다" 선택 시
-                printf("\n스킬을 선택하세요: (스킬1, 스킬2, 스킬3, 스킬4)\n");
-                break;
-            }
-            else if (selected_menu_option == 1) {
-                // "도망친다" 선택 시
-                printf("\n무사히 도망쳤다!\n");
-                break;
-            }
+
+        // 플레이어 HP가 0이면 패배
+        if (player.hp <= 0) {
+            printf("\n플레이어가 패배했습니다...\n");
+            break;
         }
     }
 
