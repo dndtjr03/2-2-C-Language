@@ -10,7 +10,7 @@
 * => C/C++에서 printf사용했을 때 문자열 색상 출력하는 명령어
 */ 
 
-#define RESET_COLOR "\033[0m"		// 색상 초기화
+/*#define RESET_COLOR "\033[0m"		// 색상 초기화
 #define COLOR_WHITE "\033[37m"		// 색상 == 하얀색 (내 캐랙터 색상)
 #define COLOR_RED   "\033[31m"		// 색상 == 빨간색 (적 캐릭터 색상)
 
@@ -20,4 +20,26 @@
 // 캐릭터와 적을 출력하는 함수 선언
 void draw_character();
 void draw_enemy();
+*/
+// 위에 필요없어짐
+
+// 캐릭터 및 적의 기본 구조 정의
+typedef struct {
+    char name[20];
+    int level;
+    int hp;
+    int max_hp;
+    int attack;
+    int defense;
+    int speed;
+} Character;
+
+// 캐릭터와 적을 생성하는 함수
+Character create_character(const char* name, int level, int max_hp, int attack, int defense, int speed);
+
+// 캐릭터와 적을 출력하는 함수
+void draw_character(const Character* character, int is_player);
+
+
+
 
