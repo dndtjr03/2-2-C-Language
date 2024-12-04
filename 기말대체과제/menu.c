@@ -4,8 +4,8 @@
 
 // 메뉴 출력
 void display_menu(int selected_option) {
-	const char* option1 = (selected_option == 0) ? "▶싸운다" : "▷싸운다";     // ▶: 선택된 메뉴, ▷: 선택되지 않은 메뉴
-	const char* option2 = (selected_option == 1) ? "▶도망친다" : "▷도망친다";       // ▶: 선택된 메뉴, ▷: 선택되지 않은 메뉴
+    const char* option1 = (selected_option == 0) ? "▶싸운다" : "▷싸운다";     // ▶: 선택된 메뉴, ▷: 선택되지 않은 메뉴
+    const char* option2 = (selected_option == 1) ? "▶도망친다" : "▷도망친다";       // ▶: 선택된 메뉴, ▷: 선택되지 않은 메뉴
 
     printf("====================================\n");
     printf("||                                ||\n");
