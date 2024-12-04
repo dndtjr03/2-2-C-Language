@@ -1,5 +1,6 @@
+#pragma warning(disable : 4996)
 #include <stdio.h>
-#include <conio.h>	//kbhit()사용
+#include <conio.h>	// _kbhit() 사용
 #include "Char.h"
 #include "menu.h"
 #include "Screen.h"
@@ -7,9 +8,9 @@
 void main()
 {
     // 콘솔 창 제목 설정
-	system("mode con cols = 76 | title 20212311_이웅석 기말대체과제");
-	
-     // 캐릭터 생성
+    system("mode con cols=76 | title 20212311_이웅석 기말대체과제");
+
+    // 캐릭터 생성
     Character player = create_character("Player", 5, 20, 15, 10, 8);
     Character enemy = create_character("Enemy", 3, 15, 12, 8, 6);
 
@@ -22,7 +23,7 @@ void main()
         display_screen(&player, &enemy, selected_menu_option);
 
         // 키 입력 대기
-        while (!kbhit()) {
+        while (!_kbhit()) {
             // 비동기적으로 키 입력을 기다리면서 다른 작업 가능
         }
 
@@ -41,12 +42,12 @@ void main()
             if (selected_menu_option == 0) {
                 // "싸운다" 선택 시
                 printf("\n스킬을 선택하세요: (스킬1, 스킬2, 스킬3, 스킬4)\n");
-                break; // 간단한 종료 처리
+                break;
             }
             else if (selected_menu_option == 1) {
                 // "도망친다" 선택 시
                 printf("\n무사히 도망쳤다!\n");
-                break; // 간단한 종료 처리
+                break;
             }
         }
     }
