@@ -2,6 +2,7 @@
 #include <string.h>
 #include "Screen.h"
 #include "menu.h" // 메뉴 관련 함수 포함
+#include "Damage.h"
 
 
 // 전체 화면 출력
@@ -19,5 +20,10 @@ void display_screen(const Character* player, const Character* enemy, int selecte
     printf("\n\n");
 
     // 메뉴 출력 (menu.c의 draw_menu 함수 호출)
-    draw_menu(selected_menu_option);
+	if (selected_menu_option == 0) {
+		draw_menu(0);
+	}
+	else {
+		draw_menu(1);
+	}
 }
