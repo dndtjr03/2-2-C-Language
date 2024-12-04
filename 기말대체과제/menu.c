@@ -3,7 +3,7 @@
 #include "menu.h"
 
 // 메뉴 출력
-void display_menu(int selected_option) {
+void draw_menu(int selected_option) {
     const char* option1 = (selected_option == 0) ? "▶싸운다" : "▷싸운다";     // ▶: 선택된 메뉴, ▷: 선택되지 않은 메뉴
     const char* option2 = (selected_option == 1) ? "▶도망친다" : "▷도망친다";       // ▶: 선택된 메뉴, ▷: 선택되지 않은 메뉴
 
@@ -44,7 +44,7 @@ int navigate_menu() {
 
     while (1) {
         // 메뉴 출력
-        display_menu(selected_option);
+        draw_menu(selected_option);
 
         // 방향키 입력 처리
         int key = _getch();

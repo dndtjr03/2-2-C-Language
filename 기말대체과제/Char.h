@@ -1,6 +1,5 @@
 #pragma once
 
-
 /*// 캐릭터와 적의 크기 정의
 #define CHARACTER_WIDTH 11
 #define CHARACTER_HEIGHT 7
@@ -22,30 +21,7 @@
 void draw_character();
 void draw_enemy();
 */
-<<<<<<< HEAD
-=======
 // 위에 필요없어짐
-
-// 캐릭터 및 적의 기본 구조 정의
-typedef struct {
-    char name[20];
-    int level;
-    int hp;
-    int max_hp;
-    int attack;
-    int defense;
-    int speed;
-} Character;
-
-// 캐릭터와 적을 생성하는 함수
-Character create_character(const char* name, int level, int max_hp, int attack, int defense, int speed);
-
-// 캐릭터와 적을 출력하는 함수
-void draw_character(const Character* character, int is_player);
-
-
-
->>>>>>> 50ae63ac8b81c03893b12e15a27d9eff5e6328f7
 
 // 캐릭터들 구조체 정의
 // 이름, 레벨, 체력, 최대 체력, 공격력, 방어력, 스피드 설정
